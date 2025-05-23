@@ -18,14 +18,19 @@ const Navbar = () => {
         navigate('/');
         setTimeout(() => scrollToTop(), 100); // delay ensures scroll after navigation
       }
-    } else if (path === '#projects') {
-      if (location.pathname === '/') {
-        const el = document.getElementById('projects');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.location.href = '/#projects';
+         } else if (path === '#projects') {
+        if (location.pathname === '/') {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          navigate('/'); // navigate to home
+          setTimeout(() => {
+            const el = document.getElementById('projects');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 300); // wait for navigation to complete
+        }
       }
-    } else {
+ else {
       navigate(path);
     }
     setIsOpen(false);
@@ -43,7 +48,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => handleNavClick('/')}
-            className="text-xl font-bold text-black"
+            className="text-xl font-bold text-black hover:cursor-pointer"
           >
             Aasif Azlan
           </button>
@@ -54,7 +59,7 @@ const Navbar = () => {
                 <button
                   key={link.name}
                   onClick={() => handleNavClick(link.path)}
-                  className="text-black hover:text-blue-400 transition duration-300"
+                  className="text-black hover:text-blue-400 cursor-pointer transition duration-300"
                 >
                   {link.name}
                 </button>
