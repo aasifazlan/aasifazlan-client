@@ -46,9 +46,9 @@ export default function Skills() {
         </div>
 
         <div className="mt-6">
-          <a href="#more" className="text-blue-400 hover:underline text-base inline-flex items-center">
+          {/* <a href="#more" className="text-blue-400 hover:underline text-base inline-flex items-center">
             Dive Deeper →
-          </a>
+          </a> */}
         </div>
       </div>
 
