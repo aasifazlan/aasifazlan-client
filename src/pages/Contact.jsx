@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../lib/axios";
 import { motion } from "framer-motion";
 
 export default function Contact() {
@@ -16,7 +16,7 @@ export default function Contact() {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/send", formData);
+      const res = await api.post("/send", formData);
 
       alert(res.data.message);
       e.target.reset();
