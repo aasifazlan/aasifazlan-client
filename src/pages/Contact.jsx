@@ -5,15 +5,26 @@ import { motion } from "framer-motion";
 export default function Contact() {
   const [isSending, setIsSending] = useState(false);
 
+  const validateEmail = (email) => {
+    // Simple regex to validate email format
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setIsSending(true);
 
     const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value,
+      name: e.target.name.value.trim(),
+      email: e.target.email.value.trim(),
+      message: e.target.message.value.trim(),
     };
+
+    if (!validateEmail(formData.email)) {
+      alert("Please enter a valid email address.");
+      setIsSending(false);
+      return;
+    }
 
     try {
       const res = await api.post("/send", formData);
