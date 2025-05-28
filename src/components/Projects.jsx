@@ -14,7 +14,9 @@ const projects = [
         content: "Built with React, Tailwind, Cloudinary & MongoDB. Rich text editor, auth, image uploads.",
       },
     ],
-    link: "https://unscriptedindia.in",
+    link: ["https://unscriptedindia.in",
+      "https://ui-frontend-delta.vercel.app/"
+    ],
     github: "https://github.com/aasifazlan/unscripted-india"
   },
   {
@@ -62,7 +64,26 @@ export default function Projects() {
             <div className="flex items-center justify-between bg-[#1f1f1f] p-3 border-b border-gray-700">
               <span className="text-sm text-white font-semibold px-2">{title}</span>
               <div className="flex gap-2">
-                {link && (
+                {Array.isArray(link) ? (
+                  <>
+                    <a
+                      href={link[0]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-blue-400 underline"
+                    >
+                      Live
+                    </a>
+                    <a
+                      href={link[1]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-purple-400 underline"
+                    >
+                      Demo
+                    </a>
+                  </>
+                  ) : (
                   <a
                     href={link}
                     target="_blank"
@@ -71,7 +92,7 @@ export default function Projects() {
                   >
                     Live
                   </a>
-                )}
+                   )}
                 {github && (
                   <a
                     href={github}

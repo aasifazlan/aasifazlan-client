@@ -24,8 +24,6 @@ const sampleCards = [
   { id: 20, content: "Portfolio Site with AI Voice + Resume Parser" },
 ];
 
-
-
 export default function ShoCase() {
   const [visibleCard, setVisibleCard] = useState(null);
 
@@ -36,41 +34,41 @@ export default function ShoCase() {
 
       setTimeout(() => {
         setVisibleCard(null);
-      }, 4000); // visible for 4 seconds
-    }, 5000); // new card every 5 seconds
+      }, 4000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Random position helper (inside 80% area to avoid overflow)
+  // Get responsive random position
   const getRandomPosition = () => {
-    const top = Math.floor(Math.random() * 80);
-    const left = Math.floor(Math.random() * 80);
-    return { top: `${top}%`, left: `${left}%` };
+    const top = Math.random() * 75;
+    const left = Math.random() * 75;
+    return { top: `${top}vh`, left: `${left}vw` };
   };
 
   const cardStyle = (position) => ({
     position: "absolute",
     top: position.top,
     left: position.left,
-    width: `${Math.random() * 80 + 160}px`,
-    height: `${Math.random() * 40 + 80}px`,
+    width: `${Math.random() * 20 + 10}vw`, // 10vw to 30vw
+    minWidth: "160px",
+    maxWidth: "90vw",
+    padding: "14px",
     backgroundColor: "rgba(255, 255, 255, 0.08)",
     border: "1px solid white",
     borderRadius: "14px",
-    padding: "14px",
     color: "#ffffff",
-    fontSize: "0.95rem",
+    fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
     fontWeight: "bold",
     backdropFilter: "blur(8px)",
     pointerEvents: "none",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center"
+    textAlign: "center",
+    wordBreak: "break-word",
   });
-
-  const position = getRandomPosition();
 
   return (
     <section className="relative bg-[#151515] text-white py-20 px-6">
@@ -87,11 +85,18 @@ export default function ShoCase() {
 
         {/* Fake code lines */}
         <div className="font-mono text-sm p-6 space-y-2 text-white relative overflow-hidden w-full h-full">
-          <div><span className="text-green-400">const</span> neural = <span className="text-yellow-300">"000101010011"</span>;</div>
-          <div><span className="text-green-400">function</span> activate() {'{'}</div>
+          <div>
+            <span className="text-green-400">const</span> neural ={" "}
+            <span className="text-yellow-300">"000101010011"</span>;
+          </div>
+          <div>
+            <span className="text-green-400">function</span> activate() {"{"}
+          </div>
           <div className="pl-4 text-blue-300">return brain.fire(neural)</div>
-          <div>{'}'}</div>
-          <div><span className="text-green-400">export default</span> neural;</div>
+          <div>{"}"}</div>
+          <div>
+            <span className="text-green-400">export default</span> neural;
+          </div>
 
           {/* Animated popup card */}
           <div className="absolute inset-0 pointer-events-none">
@@ -103,7 +108,7 @@ export default function ShoCase() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 1.2, ease: "easeInOut" }}
-                  style={cardStyle(position)}
+                  style={cardStyle(getRandomPosition())}
                 >
                   {visibleCard.content}
                 </motion.div>
