@@ -49,19 +49,7 @@ export default function SampleWebsites() {
               </div>
             </motion.div>
           ))}
-          <a
-  href="https://aasifazlaan.medium.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block bg-[#252525] border border-gray-700 rounded-xl p-6 hover:shadow-lg transition"
->
-  <h3 className="text-xl font-semibold mb-2">Medium Articles</h3>
-  <p className="text-gray-400 text-sm mb-2">
-    Read my blog posts on web development and creativity.
-  </p>
-  <span className="text-blue-500 text-sm underline">Read on Medium →</span>
-</a>
-
+          
         </div>
       </div>
     </section>
