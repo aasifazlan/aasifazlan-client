@@ -23,9 +23,9 @@ export default function SampleWebsites() {
   return (
     <section className="py-16 bg-[#1b1b1b] text-white px-4" id="sample-websites">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4">Featured Work</h2>
+        <h2 className="text-4xl font-bold mb-4">Articles and Startup</h2>
         <p className="text-gray-400 mb-12">
-          Explore some of my articles and projects across platforms.
+          Explore some of my articles and project.
         </p>
 
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">

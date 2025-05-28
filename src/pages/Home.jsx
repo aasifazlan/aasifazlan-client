@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <SampleWebsites/>
+      
       <ShoCase />
       <ShowcaseSection />
       <Services />
@@ -22,6 +22,7 @@ const Home = () => {
         <Projects />
       </section>
       <Skills />
+      <SampleWebsites/>
       
     </>
   );
