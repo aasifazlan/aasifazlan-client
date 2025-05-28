@@ -5,17 +5,17 @@ const websites = [
   {
     name: "Medium Article",
     url: "https://aasifazlaan.medium.com/", // replace with full article if you prefer
-    description: "MERN stack tutorials and thoughts on modern development.",
+    description: "Explore my personal essays and thought pieces on Medium.",
   },
   {
     name: "The Good Men Project",
     url: "https://goodmenproject.com/author/aasif-azlan/", // replace with article link if available
-    description: "My piece on creativity, identity, and storytelling.",
+    description: "Read my published article on The Good Men Project, a platform dedicated to conversations around modern manhood and social change.",
   },
   {
     name: "Unscripted India",
     url: "https://unscriptedindia.in",
-    description: "Unveiling India's untold history, culture, and truth.",
+    description: "Unscripted India is my MERN stack startup that uncovers untold stories, history, and cultural truths from across India.",
   },
 ];
 
