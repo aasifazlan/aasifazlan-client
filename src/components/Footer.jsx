@@ -32,7 +32,7 @@ const Footer = () => {
           <SiGmail />
         </a>
 
-        <a
+        {/* <a
           href="https://wa.me/918076585930"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +41,7 @@ const Footer = () => {
           aria-label="WhatsApp"
         >
           <FaWhatsapp />
-        </a>
+        </a> */}
       </motion.div>
     </footer>
   );
