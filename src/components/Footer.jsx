@@ -23,37 +23,6 @@ const Footer = () => {
         >
           <FaLinkedin />
         </a>
-
-        <a
-          href="https://github.com/aasifazlan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-gray-300"
-          aria-label="GitHub Profile"
-        >
-          <FaGithub />
-        </a>
-
-        <a
-          href="https://www.hackerrank.com/aasifazlaan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-green-400"
-          aria-label="HackerRank Profile"
-        >
-          <FaHackerrank />
-        </a>
-
-        <a
-          href="https://leetcode.com/aasifazlan"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-yellow-400"
-          aria-label="LeetCode Profile"
-        >
-          <SiLeetcode />
-        </a>
-
         <a
           href="mailto:aasifazlaan@gmail.com"
           aria-label="Send Email"
