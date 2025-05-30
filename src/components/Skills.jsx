@@ -1,29 +1,30 @@
 const skills = [
-  "JavaScript (ES6+)",
-  "C++",
-  "Data Structures & Algorithms",
-  "React.js",
-  "Redux",
-  "Zustand",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "REST APIs",
-  "JWT Authentication",
-  "Stripe Payment Integration",
-  "Cloudinary",
-  "Redis",
-  "Tailwind CSS",
-  "Git & GitHub",
-  "Postman",
-  "OpenCV",
-  "VS Code"
+  { name: "JavaScript (ES6+)", level: "Intermediate", progress: 80 },
+  { name: "C++", level: "Intermediate", progress: 65 },
+  { name: "Data Structures & Algorithms", level: "Intermediate", progress: 60 },
+  { name: "React.js", level: "Intermediate", progress: 85 },
+  { name: "Redux", level: "Intermediate", progress: 75 },
+  { name: "Zustand", level: "Intermediate", progress: 75 },
+  { name: "Node.js", level: "Intermediate", progress: 80 },
+  { name: "Express.js", level: "Intermediate", progress: 85 },
+  { name: "MongoDB", level: "Intermediate", progress: 78 },
+  { name: "REST APIs", level: "Advanced", progress: 90 },
+  { name: "JWT Authentication", level: "Advanced", progress: 88 },
+  { name: "Stripe Payment Integration", level: "Intermediate", progress: 75 },
+  { name: "Cloudinary", level: "Intermediate", progress: 70 },
+  { name: "Redis", level: "Intermediate", progress: 72 },
+  { name: "Tailwind CSS", level: "Intermediate", progress: 85 },
+  { name: "Git & GitHub", level: "Intermediate", progress: 80 },
+  { name: "Postman", level: "Intermediate", progress: 78 },
+  { name: "OpenCV", level: "Beginner", progress: 35 },
+  { name: "VS Code", level: "Advanced", progress: 95 },
+  { name: "Python", level: "Beginner", progress: 41 },
 ];
 
 export default function Skills() {
   return (
     <section className="bg-[#151515] py-20 px-4 overflow-hidden">
-      <div className="max-w-5xl mx-auto bg-[#343434] rounded-xl p-8 shadow-lg relative">
+      <div className="max-w-5xl mx-auto bg-[#343434] rounded-xl p-8 shadow-lg">
         <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 flex items-center">
           <span className="mr-2">🧠</span> Skills
         </h2>
@@ -31,42 +32,23 @@ export default function Skills() {
           Leverage practical skills to build dynamic, modern web applications using industry-standard technologies.
         </p>
 
-        {/* Scrolling container */}
-        <div className="relative w-full overflow-hidden">
-          <div className="flex animate-scroll space-x-6 min-w-max">
-            {[...skills, ...skills].map((skill, i) => (
-              <span
-                key={i}
-                className="bg-[#151515] text-white text-sm md:text-base px-4 py-2 rounded-md shadow hover:bg-gray-700 transition whitespace-nowrap"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-6">
-          {/* <a href="#more" className="text-blue-400 hover:underline text-base inline-flex items-center">
-            Dive Deeper →
-          </a> */}
+        <div className="space-y-6">
+          {skills.map((skill, index) => (
+            <div key={index}>
+              <div className="flex justify-between mb-1">
+                <span className="text-white text-sm md:text-base font-medium">{skill.name}</span>
+                <span className="text-gray-300 text-sm">{skill.level}</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2.5">
+                <div
+                  className="bg-green-500 h-2.5 rounded-full"
+                  style={{ width: `${skill.progress}%` }}
+                ></div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-
-      {/* Tailwind custom animation */}
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

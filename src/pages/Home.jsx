@@ -1,10 +1,10 @@
 import Hero from '../components/Hero';
 import ShoCase from '../components/ShoCase';
-import ShowcaseSection from '../components/ShowcaseSection';
 import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import SampleWebsites from '../components/SampleWebsites';
+// import AboutMeShowcase from '../components/AboutMeShowcase';
  
 
 const Home = () => {
@@ -12,8 +12,8 @@ const Home = () => {
     <>
       <Hero />
       
-      <ShoCase />
-      <ShowcaseSection />
+      <Skills />
+       
       <Services />
       <section
         id="projects"
@@ -21,7 +21,8 @@ const Home = () => {
       >
         <Projects />
       </section>
-      <Skills />
+      
+      <ShoCase />
       <SampleWebsites/>
       
     </>
