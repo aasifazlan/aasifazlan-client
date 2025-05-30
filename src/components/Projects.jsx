@@ -15,7 +15,7 @@ const projects = [
       },
     ],
     link: ["https://unscriptedindia.in",
-      "https://ui-frontend-delta.vercel.app/"
+      "https://ui-optimised-frontend.vercel.app/"
     ],
     github: "https://github.com/aasifazlan/unscripted-india"
   },
