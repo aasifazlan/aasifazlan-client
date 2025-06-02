@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,28 +16,24 @@ const Navbar = () => {
         scrollToTop();
       } else {
         navigate('/');
-        setTimeout(() => scrollToTop(), 100); // delay ensures scroll after navigation
+        setTimeout(() => scrollToTop(), 100);
       }
-         } else if (path === '#projects') {
-        if (location.pathname === '/') {
-          const el = document.getElementById('projects');
+    } else if (path.startsWith('#')) {
+      const sectionId = path.substring(1); // 'projects' or 'articles'
+      if (location.pathname === '/') {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
           if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }else if(path==='#articles'){
-          if(location.pathname==='/'){
-            const el=document.getElementById('articles');
-            if(el) el.scrollIntoView({behavior:'smooth'})
-          }
-        } else {
-          navigate('/'); // navigate to home
-          setTimeout(() => {
-            const el = document.getElementById('projects');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }, 300); // wait for navigation to complete
-        }
+        }, 300);
       }
- else {
+    } else {
       navigate(path);
     }
+
     setIsOpen(false);
   };
 
