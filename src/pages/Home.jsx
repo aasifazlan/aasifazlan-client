@@ -14,7 +14,7 @@ const Home = () => {
       
       <Skills />
        
-      <Services />
+     
       <section
         id="projects"
         className="min-h-screen bg-[#151515] text-black py-20 px-6"
@@ -23,7 +23,11 @@ const Home = () => {
       </section>
       
       <ShoCase />
-      <SampleWebsites/>
+      <section className='artilces'>
+        <SampleWebsites/>
+      </section>
+      
+       <Services />
       
     </>
   );

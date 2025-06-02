@@ -22,6 +22,11 @@ const Navbar = () => {
         if (location.pathname === '/') {
           const el = document.getElementById('projects');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }else if(path==='#articles'){
+          if(location.pathname==='/'){
+            const el=document.getElementById('articles');
+            if(el) el.scrollIntoView({behavior:'smooth'})
+          }
         } else {
           navigate('/'); // navigate to home
           setTimeout(() => {
@@ -40,6 +45,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Projects', path: '#projects' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Articles', path: '#articles' },
   ];
 
   return (
