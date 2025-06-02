@@ -23,7 +23,7 @@ const Home = () => {
       </section>
       
       <ShoCase />
-      <section id='artilces'>
+      <section id="artilces">
         <SampleWebsites/>
       </section>
       
