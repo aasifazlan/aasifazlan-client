@@ -4,18 +4,20 @@ import { motion } from "framer-motion";
 const websites = [
   {
     name: "Medium Article",
-    url: "https://aasifazlaan.medium.com/", // replace with full article if you prefer
+    url: "https://aasifazlaan.medium.com/",
     description: "Explore my personal essays and thought pieces on Medium.",
   },
   {
     name: "The Good Men Project",
-    url: "https://goodmenproject.com/author/aasif-azlan/", // replace with article link if available
-    description: "Read my published article on The Good Men Project, a platform dedicated to conversations around modern manhood and social change.",
+    url: "https://goodmenproject.com/author/aasif-azlan/",
+    description:
+      "Read my published article on The Good Men Project, a platform dedicated to conversations around modern manhood and social change.",
   },
   {
     name: "Unscripted India",
     url: "https://unscriptedindia.in",
-    description: "Unscripted India is my MERN stack startup that uncovers untold stories, history, and cultural truths from across India.",
+    description:
+      "Unscripted India is my MERN stack startup that uncovers untold stories, history, and cultural truths from across India.",
   },
 ];
 
@@ -44,12 +46,18 @@ export default function SampleWebsites() {
                 ></iframe>
               </div>
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-1">{site.name}</h3>
-                <p className="text-gray-400 text-sm">{site.description}</p>
+                <a
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  <h3 className="text-xl font-semibold mb-1">{site.name}</h3>
+                  <p className="text-gray-400 text-sm  group-hover:text-blue-300 transition-colors duration-200">{site.description}</p>
+                </a>
               </div>
             </motion.div>
           ))}
-          
         </div>
       </div>
     </section>
