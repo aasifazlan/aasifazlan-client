@@ -8,6 +8,7 @@ const skills = [
   { name: "Node.js", level: "Intermediate", progress: 80 },
   { name: "Express.js", level: "Intermediate", progress: 85 },
   { name: "MongoDB", level: "Intermediate", progress: 78 },
+  { name: "MySQL", level: "Beginner", progress: 42 },
   { name: "REST APIs", level: "Advanced", progress: 90 },
   { name: "JWT Authentication", level: "Advanced", progress: 88 },
   { name: "Stripe Payment Integration", level: "Intermediate", progress: 75 },
