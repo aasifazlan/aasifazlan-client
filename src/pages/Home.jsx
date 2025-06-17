@@ -23,7 +23,7 @@ const Home = () => {
 
       <section
         id="articles"
-        className="min-h-screen bg-white text-black py-20 px-6"
+        className="min-h-screen bg-[#151515]  text-black py-20 px-6"
       >
         <SampleWebsites />
       </section>
