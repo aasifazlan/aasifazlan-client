@@ -7,9 +7,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-   build: {
-    rollupOptions: {
-      external: ['lucide-react'],
-    },
+   optimizeDeps: {
+    include: ['lucide-react'],
   },
 })
