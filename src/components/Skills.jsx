@@ -23,11 +23,12 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="bg-[#151515] py-20 px-4 overflow-hidden">
+    <section className="bg-[#151515] py-20 px-4">
       <div className="max-w-5xl mx-auto bg-[#343434] rounded-xl p-8 shadow-lg">
         <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 flex items-center">
           <span className="mr-2">🧠</span> Skills
         </h2>
+
         <p className="text-gray-300 text-lg mb-8">
           Leverage practical skills to build dynamic, modern web applications using industry-standard technologies.
         </p>
@@ -36,14 +37,19 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <div key={index}>
               <div className="flex justify-between mb-1">
-                <span className="text-white text-sm md:text-base font-medium">{skill.name}</span>
-                <span className="text-gray-300 text-sm">{skill.level}</span>
+                <span className="text-white text-sm md:text-base font-medium">
+                  {skill.name}
+                </span>
+                <span className="text-gray-300 text-sm">
+                  {skill.level}
+                </span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2.5">
+
+              <div className="w-full bg-gray-700 rounded-full h-2.5 overflow-hidden">
                 <div
                   className="bg-green-500 h-2.5 rounded-full"
                   style={{ width: `${skill.progress}%` }}
-                ></div>
+                />
               </div>
             </div>
           ))}
